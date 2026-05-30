@@ -1,11 +1,22 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
+const getSavedAuth = () => {
+    try {
+        const stored = localStorage.getItem('login');
+        return stored ? JSON.parse(stored) : { isLoggedIn: false, user: {} };
+    } catch {
+        return { isLoggedIn: false, user: {} };
+    }
+};
+
+const savedAuth = getSavedAuth();
+
 const initialState = {
-    isLoggedIn: JSON.parse(localStorage.getItem('login')).isLoggedIn || false,
+    isLoggedIn: savedAuth.isLoggedIn || false,
     user: {
-        email: JSON.parse(localStorage.getItem('login')).user?.email || '',
-        name: JSON.parse(localStorage.getItem('login')).user?.name || ''
+        email: savedAuth.user?.email || '',
+        name: savedAuth.user?.name || ''
     },
     loading: false,
     error: null
