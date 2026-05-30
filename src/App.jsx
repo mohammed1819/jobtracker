@@ -7,7 +7,7 @@ import Login from './features/auth/Login'
 import ProtectedRoutes from './utils/ProtectedRoutes'
 import Stats from './features/jobs/Stats'
 import Layout1 from './components/Layout1'
-import Error from './pages/error'
+import Error from './pages/Error'
 
 function App() {
 
