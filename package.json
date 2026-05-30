@@ -1,9 +1,9 @@
 {
+  "homepage": "https://MohammedTaha18.github.io/jobtracker.git",
   "name": "jobtrackerapp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/MohammedTaha18/jobtracker.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
